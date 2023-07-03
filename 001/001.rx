@@ -1,0 +1,6 @@
+call sum 8 8
+exit
+
+sum: procedure
+    arg num1 num2
+    say num1 + num2
