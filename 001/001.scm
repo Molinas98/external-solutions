@@ -1,5 +1,4 @@
-; Función para sumar dos números
-(define (sumar a b)
+(define (sum a b)
   (+ a b))
-(display (sumar 17 33))
+(display (sum 17 33))
 (newline)
