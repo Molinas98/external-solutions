@@ -1,0 +1,22 @@
+main:
+    PULL amount_array
+    DO i = 1 TO  amount_array
+        PULL line
+        arrays.i = line
+    END
+    call minimumOfTwo arrays, amount_array
+    EXIT
+
+minimumOfTwo:
+    arg arrays, amount_array
+    DO i = 1 TO amount_array        
+        IF WORD(arrays.i , 1) < WORD(arrays.i , 2) THEN
+            result.i = WORD(arrays.i , 1)
+        ELSE
+            result.i = WORD(arrays.i , 2)        
+    END
+    result_line = ""
+    DO i=1 TO amount_array
+        result_line = result_line || result.i || " "
+    END
+    say SUBSTR(result_line, 1, LENGTH(result_line)-1)

@@ -1,0 +1,13 @@
+main:
+    PULL amount_numbers
+    PULL numbers
+    call sum numbers, amount_numbers
+    EXIT
+
+sum: PROCEDURE
+    arg numbers, amount_numbers
+    sum = 0
+    DO i = 1 TO amount_numbers
+        sum = sum + WORD(numbers, i)
+    END
+    say sum

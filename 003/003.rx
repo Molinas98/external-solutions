@@ -1,0 +1,24 @@
+main:
+    PULL amount_array
+    DO i = 1 TO  amount_array
+        PULL line
+        arrays.i = line
+    END
+    call sum arrays, amount_array
+    EXIT
+
+sum:
+    arg arrays, amount_array
+    DO i = 1 TO amount_array
+        sum = 0
+        DO j = 1 TO WORDS(arrays.i)
+            sum = sum + WORD(arrays.i , j)
+        END
+        result.i = sum
+    END
+    result_line = ""
+    DO i=1 TO amount_array
+        result_line = result_line || result.i || " "
+    END
+    say SUBSTR(result_line, 1, LENGTH(result_line)-1)
+
